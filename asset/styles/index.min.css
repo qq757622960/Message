@@ -1,0 +1,55 @@
+@charset "UTF-8";
+*{-webkit-box-sizing:border-box;box-sizing:border-box;word-break:break-all;word-wrap:break-word}
+html{-ms-touch-action:none}
+body{font-family:"IBM Plex Mono ExtraLight","Segoe UI","Helvetica Neue",Helvetica,Roboto,'Open Sans',FreeSans,sans-serif;background-color:#fff;font-size:16px}
+input{font-family:Arial,"Microsoft YaHei",sans-serif}
+a{text-decoration:none;-webkit-touch-callout:none;color:#4c4c4c}
+a,blockquote,body,code,dd,div,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,pre,span,td,textarea,th,ul{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,iframe,img{border:0}
+:focus{outline:0}
+address,caption,cite,code,dfn,em,i,strong,th,var{font-style:normal}
+ol,ul{list-style:none}
+li{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}
+blockquote:after,blockquote:before,q:after,q:before{content:""}
+abbr,acronym{border:0;font-variant:normal}
+img{vertical-align:top;border:none}
+input,textarea{-webkit-user-select:text;-ms-user-select:text;-moz-user-select:text;user-select:text;-webkit-appearance:none}
+button:focus,input:focus,select:focus,textarea:focus{outline:0}
+input[type=email],input[type=number],input[type=password],input[type=search],input[type=tel],input[type=text],input[type=url],textarea{-webkit-appearance:none;border:1px solid;border-radius:0}
+input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+em,i{font-style:normal}
+li{list-style:none}
+input[type=checkbox]{position:relative;width:rem(32);height:rem(32);background-color:#f5f5f5;border:1px solid #ccc;border-radius:50%;vertical-align:middle}
+input[type=checkbox]:checked{border-color:#ed5564;background-color:#ed5564}
+input[type=checkbox]:checked:after{content:'';position:absolute;left:3px;top:3px;width:8px;height:5px;border-left:1px solid #fff;border-bottom:1px solid #fff;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
+body{height:100vh;background:-webkit-gradient(linear,left top,right top,from(rgba(107,183,86,.95)),to(rgba(0,143,104,.95)));background:linear-gradient(to right,rgba(107,183,86,.95),rgba(0,143,104,.95))}
+.mod_form_wrap{position:absolute;top:50%;left:50%;z-index:3;-webkit-transform:translate3d(-50%,-50%,0);transform:translate3d(-50%,-50%,0);width:50vw;height:50vh;overflow:hidden}
+.mod_form_wrap:after{content:'';position:absolute;width:50px;height:1px;right:0;top:0;border:0;-webkit-transform-origin:0 0;transform-origin:0 0;-webkit-transform:translate(12px) rotate(45deg);transform:translate(12px) rotate(45deg);-webkit-box-shadow:0 -5px 0 0 rgba(255,255,255,.8),0 -8px 0 0 rgba(255,255,255,.6),0 -12px 0 0 rgba(255,255,255,.4),0 -17px 0 0 rgba(255,255,255,.2),0 -22px 0 0 rgba(255,255,255,.2);box-shadow:0 -5px 0 0 rgba(255,255,255,.8),0 -8px 0 0 rgba(255,255,255,.6),0 -12px 0 0 rgba(255,255,255,.4),0 -17px 0 0 rgba(255,255,255,.2),0 -22px 0 0 rgba(255,255,255,.2)}
+.mod_form_wrap .mod_form{padding:1.5em;height:100%;border-radius:0;border:0;text-align:center;--polygon:polygon( 0 0, calc(100% - 35px) 0, 100% 35px, 100% 100%, 0 100%);-webkit-clip-path:var(--polygon);clip-path:var(--polygon);background-image:-webkit-gradient(linear,left bottom,left top,from(#ebc0fd),to(#d9ded8));background-image:linear-gradient(to top,#ebc0fd 0,#d9ded8 100%)}
+.mod_form_wrap .mod_form textarea{padding:1.5vw;font-size:14px;color:#333;min-width:100%;height:36vh;resize:none;outline:0;border:none;text-align:justify;background-color:#fbfbfb}
+.mod_form_wrap .mod_form button{display:inline-block;text-align:center;margin-top:1.4em;width:30vw;height:5vh;font-size:14px;border:none;outline:0;color:#333;background-color:#fbfbfb}
+@media (min-width:320px){
+body .mod_doodle{display:none}
+.mod_form_wrap{width:90vw}
+.mod_form_wrap .mod_form{padding:5vw}
+.mod_form_wrap .mod_form button{margin-top:1.1em;min-width:100%}
+}
+@media (min-width:550px){
+body .mod_doodle{display:none}
+.mod_form_wrap{width:90vw}
+.mod_form_wrap .mod_form button{min-width:100%}
+}
+@media (min-width:768px){
+body .mod_doodle{display:none}
+.mod_form_wrap{width:90vw}
+.mod_form_wrap .mod_form button{min-width:100%}
+}
+@media (min-width:960px){
+body .mod_doodle{display:block}
+.mod_form_wrap{width:50vw}
+.mod_form_wrap .mod_form{padding:1.5em}
+.mod_form_wrap .mod_form button{margin-top:1.4em;min-width:100%}
+}

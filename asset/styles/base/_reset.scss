@@ -1,0 +1,198 @@
+@charset "utf-8";
+* {
+    box-sizing: border-box;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+html {
+    -ms-touch-action: none;
+}
+
+body {
+    // font-family: Heiti, Heiti SC, DroidSans, DroidSansFallback, Arial, "Microsoft YaHei";
+    font-family: "IBM Plex Mono ExtraLight", "Segoe UI", "Helvetica Neue", Helvetica, Roboto, 'Open Sans', FreeSans, sans-serif;
+    background-color: #ffffff;
+    font-size: 16px;
+}
+
+input {
+    font-family: Arial, "Microsoft YaHei", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    -webkit-touch-callout: none;
+    color: #4c4c4c;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+span,
+a {
+    margin: 0;
+    padding: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset,
+img,
+iframe {
+    border: 0
+}
+
+:focus {
+    outline: 0
+}
+
+i,
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-style: normal
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+li {
+    list-style: none
+}
+
+caption,
+th {
+    text-align: left
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: ''
+}
+
+abbr,
+acronym {
+    border: 0;
+    font-variant: normal
+}
+
+img {
+    vertical-align: top;
+    border: none;
+}
+
+input,
+textarea {
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    -webkit-appearance: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+textarea {
+    -webkit-appearance: none;
+    border: 1px solid;
+    border-radius: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+em,
+i {
+    font-style: normal;
+}
+
+li {
+    list-style: none;
+}
+
+input[type="checkbox"] {
+    position: relative;
+    width: rem(32);
+    height: rem(32);
+    background-color: #F5F5F5;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+input[type="checkbox"]:checked {
+    border-color: #ED5564;
+    background-color: #ED5564;
+}
+
+input[type="checkbox"]:checked:after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 8px;
+    height: 5px;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}

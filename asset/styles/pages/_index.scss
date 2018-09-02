@@ -1,0 +1,138 @@
+/** 
+ * @Author: YISHI 
+ * @Date: 2018-08-31 11:55:53 
+ * @Desc: 首页 
+ */
+
+@charset 'utf-8';
+// * { transition: all .3s; }
+body {
+    height: 100vh;
+    background: linear-gradient(to right, rgba(107, 183, 86, 0.95), rgba(0, 143, 104, 0.95)); // background-color: hsl(34, 53%, 82%);
+    // background-image: repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, hsla(197, 62%, 11%, 0.5) 10px, hsla(5, 53%, 63%, 0) 10px, hsla(5, 53%, 63%, 0) 35px, hsla(5, 53%, 63%, 0.5) 35px, hsla(5, 53%, 63%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 50px, hsla(197, 62%, 11%, 0) 50px, hsla(197, 62%, 11%, 0) 60px, hsla(5, 53%, 63%, 0.5) 60px, hsla(5, 53%, 63%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 80px, hsla(35, 91%, 65%, 0) 80px, hsla(35, 91%, 65%, 0) 90px, hsla(5, 53%, 63%, 0.5) 90px, hsla(5, 53%, 63%, 0.5) 110px, hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 120px, hsla(197, 62%, 11%, 0.5) 120px, hsla(197, 62%, 11%, 0.5) 140px), repeating-linear-gradient(135deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, hsla(197, 62%, 11%, 0.5) 10px, hsla(5, 53%, 63%, 0) 10px, hsla(5, 53%, 63%, 0) 35px, hsla(5, 53%, 63%, 0.5) 35px, hsla(5, 53%, 63%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 50px, hsla(197, 62%, 11%, 0) 50px, hsla(197, 62%, 11%, 0) 60px, hsla(5, 53%, 63%, 0.5) 60px, hsla(5, 53%, 63%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 80px, hsla(35, 91%, 65%, 0) 80px, hsla(35, 91%, 65%, 0) 90px, hsla(5, 53%, 63%, 0.5) 90px, hsla(5, 53%, 63%, 0.5) 110px, hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 140px, hsla(197, 62%, 11%, 0.5) 140px, hsla(197, 62%, 11%, 0.5) 160px);
+}
+
+.mod_form_wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    transform: translate3d(-50%, -50%, 0);
+    width: 50vw;
+    height: 50vh;
+    overflow: hidden;
+    &:after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 1px;
+        right: 0;
+        top: 0;
+        border: 0;
+        transform-origin: 0 0;
+        transform: translate(12px) rotate(45deg);
+        box-shadow: 0 -5px 0 0 rgba(255, 255, 255, .8), 0 -8px 0 0 rgba(255, 255, 255, .6), 0 -12px 0 0 rgba(255, 255, 255, .4), 0 -17px 0 0 rgba(255, 255, 255, .2), 0 -22px 0 0 rgba(255, 255, 255, .2);
+    }
+    .mod_form {
+        padding: 1.5em;
+        height: 100%;
+        border-radius: 0;
+        border: 0;
+        text-align: center;
+        --polygon: polygon( 0 0, calc(100% - 35px) 0, 100% 35px, 100% 100%, 0 100%);
+        clip-path: var(--polygon);
+        background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
+        textarea {
+            padding: 1.5vw;
+            font-size: 14px;
+            color: #333;
+            min-width: 100%;
+            height: 36vh;
+            resize: none;
+            outline: none;
+            border: none;
+            text-align: justify;
+            background-color: #fbfbfb; // background-color: rgba(255, 255, 255, .9);
+        }
+        button {
+            display: inline-block;
+            text-align: center;
+            margin-top: 1.4em;
+            width: 30vw;
+            height: 5vh;
+            font-size: 14px;
+            border: none;
+            outline: none;
+            color: #333;
+            background-color: #fbfbfb;
+        }
+    }
+}
+
+@media (min-width: 320px) {
+    body {
+        .mod_doodle {
+            display: none;
+        }
+    }
+    .mod_form_wrap {
+        width: 90vw;
+        .mod_form {
+            padding: 5vw;
+            button {
+                margin-top: 1.1em;
+                min-width: 100%;
+            }
+        }
+    }
+}
+
+@media (min-width: 550px) {
+    body {
+        .mod_doodle {
+            display: none;
+        }
+    }
+    .mod_form_wrap {
+        width: 90vw;
+        .mod_form {
+            button {
+                min-width: 100%;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        .mod_doodle {
+            display: none;
+        }
+    }
+    .mod_form_wrap {
+        width: 90vw;
+        .mod_form {
+            button {
+                min-width: 100%;
+            }
+        }
+    }
+}
+
+@media (min-width: 960px) {
+    body {
+        .mod_doodle {
+            display: block;
+        }
+    }
+    .mod_form_wrap {
+        width: 50vw;
+        .mod_form {
+            padding: 1.5em;
+            button {
+                margin-top: 1.4em;
+                min-width: 100%;
+            }
+        }
+    }
+}
