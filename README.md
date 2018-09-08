@@ -1,4 +1,5 @@
 > CSS 规范
+
 > 代码风格
 
 样式书写一般有两种：一种是紧凑格式 (Compact)
@@ -1322,6 +1323,328 @@ HTML模版指的是团队使用的初始化HTML文件，里面会根据不同平
 </body>
 </html>
 ```
+
+##命名规范
+###目录命名
+>DOM结构、命名统一，维护起来更便捷，因而目录统一采用以下命名规则。
+
++ 项目文件夹：projectname
++ 样式文件夹：css
++  脚本文件夹：js
++  样式类图片文件夹：img
+###HTML/CSS命名
+>确保文件命名总是以字母开头而不是数字，且字母一律小写，以下划线连接且不带其他标点符号
+
+######HTML
+
++ lz.html
++ lz_list.html
++ lz_detail.html
+
+
+######CSS
+
++ lz.css
++ lz_list.css
++ lz_detail.css
+
+###ClassName命名
+>ClassName的命名应该尽量精短、明确，必须以字母开头命名，且全部字母为小写，单词之间统一使用下划线 “_” 连接
+
+######命名原则
+>基于姓氏命名法（继承 + 外来）,祖先模块不能出现下划线，除了是全站公用模块，如 `mod_` 系列的命名：
+
+    <div class="modulename">
+		<div class="modulename_info">
+			<div class="modulename_son"></div>
+			<div class="modulename_son"></div>
+			...
+		</div>
+	</div>
+
+    <!-- 这个是全站公用模块，祖先模块允许直接出现下划线 -->
+	<div class="mod_info">
+		<div class="mod_info_son"></div>
+		<div class="mod_info_son"></div>
+		...		
+	</div>
+
+>在子孙模块数量可预测的情况下，严格继承祖先模块的命名前缀
+
+    <div class="modulename">
+		<div class="modulename_cover"></div>
+		<div class="modulename_info"></div>
+	</div>
+
+>当子孙模块超过4级或以上的时候，可以考虑在祖先模块内具有识辨性的独立缩写作为新的子孙模块
+
+    <div class="modulename">
+		<div class="modulename_cover"></div>
+		<div class="modulename_info">
+    		<div class="modulename_info_user">
+    			<div class="modulename_info_user_img">
+    				<img src="" alt="">
+    				<!-- 这个时候 miui 为 modulename_info_user_img 首字母缩写-->
+    				<div class="miui_tit"></div>
+    				<div class="miui_txt"></div>
+    				...
+    			</div>
+    		</div>
+    		<div class="modulename_info_list"></div>
+		</div>
+	</div>
+######模块命名
+>全站公共模块：以`mod_` 开头
+
+    <div class="mod_yours"></div>
+
+>业务公共模块：以 业务名`_mod_ `开头
+
+    <div class="paipai_mod_yours"></div>
+
+
+##JS规范
+###语言规范
+####类型
+######基本类型
++ 字符串
++ 数值
++ 布尔类型
++ null
++ undefined
+######复杂类型
++ object
++ array
++ function
+###引用
+>const 和 let 都是块级作用域，var 是函数级作用域。
+
+>复杂类型对所有引用都使用 const，不要使用 var
+
+    const a = 1;
+	const b = 2;
+
+>如果引用是可变动的，则使用 let
+
+    let count = 1
+	if (count < 10) {
+  		count += 1
+	}
+
+
+####对象
+请使用字面量值创建对象
+
+    const a = {}
+
+>别使用保留字作为对象的键值，这样在 IE8 下不会运行
+
+    const a = {
+  		defaults: {},//注意这里尽量不要用default;default是保留字
+  		common: {}
+	}
+>请使用对象方法的简写方式
+
+    const item = {
+  		value: 1,
+  		addValue(val) {
+    		return item.value + val
+  		}
+	}
+>请使用对象属性值的简写方式
+
+    const job = 'FrontEnd'
+	const item = {
+  		job
+	}
+
+>对象属性值的简写方式要和声明式的方式分组
+
+    const job = 'FrontEnd'
+	const department = 'JDC'
+	const item = {
+	  job,
+	  department,
+	  sex: 'male',
+	  age: 25
+	}
+
+####数组
+>请使用字面量值创建数组
+
+    const items = []
+
+>向数组中添加元素时，请使用 push 方法
+
+    const items = []
+	items.push('test')
+
+>使用数组的 map 等方法时，请使用 return 声明，如果是单一声明语句的情况，可省略 return
+
+	[1, 2, 3].map(x => {
+	  const y = x + 1
+	  return x * y
+	})
+	
+	[1, 2, 3].map(x => x + 1) //单一声明语句情况 可以省略return
+
+
+####字符串
+>字符串统一使用单引号的形式 ''
+
+    const department = 'JDC'
+
+>字符串太长的时候，请不要使用字符串连接符换行 \，而是使用 +
+
+	const str = '凹凸实验室 凹凸实验室 凹凸实验室' +
+  		'凹凸实验室 凹凸实验室 凹凸实验室' +
+  		'凹凸实验室 凹凸实验室'
+
+>程序化生成字符串时，请使用模板字符串
+
+    const test = 'test'
+	const str = `ab${test}`
+
+####函数
+>请使用函数声明，而不是函数表达式
+
+    // 函数表达式 不推荐
+	const foo = function () {
+	  // do something
+	}
+	
+	// 函数声明推荐使用
+	function foo () {
+	  // do something
+	}
+
+>不要在非函数代码块中声明函数
+
+    // 不推荐使用
+	if (isUse) {
+	  function test () {
+	    // do something
+	  }
+	}
+	
+	// 推荐使用
+	let test
+	if (isUse) {
+	  test = () => {
+	    // do something
+	  }
+	}
+
+
+>不要更改函数参数的值
+
+    // 不推荐
+	function test (opts) {
+	  opts = opts || {}
+	}
+	
+	// 推荐
+	function test (opts = {}) {
+	  // ...
+	}
+
+####模块
+>使用标准的 ES6 模块语法 import 和 export
+
+    // good
+	import Util from './util'
+	export default Util
+	
+	// better
+	import { Util } from './util'
+	export default Util
+
+
+>不要使用 import 的通配符 *，这样可以确保你只有一个默认的 export
+	
+	//推荐
+    import Util from './util'
+	// 不推荐
+	import * as Util from './util'
+
+
+####对象属性
+>使用 . 来访问对象属性
+
+    const joke = {
+	  name: 'haha',
+	  age: 28
+	}
+	const name = joke.name
+
+####变量声明
+>声明变量时，请使用 const、let 关键字，如果没有写关键字，变量就会暴露在全局上下文中，这样很可能会和现有变量冲突，另外，也很难明确该变量的作用域是什么。这里推荐使用 const 来声明变量，我们需要避免全局命名空间的污染。
+
+	const demo = new Demo()
+
+>将所有的 const 和 let 分组
+
+    const b
+	const d
+	let a
+	let c
+	let e
+
+###代码规范
+
+####单行代码块
+>在单行代码块中使用空格
+
+    function foo () { return true }
+	if (foo) { bar = 0 }
+
+
+####变量命名
+>当命名变量时，主流分为驼峰式命名（variableName）和下划线命名（variable_name）两大阵营
+>>团队约定使用驼峰式命名
+
+####逗号空格
+>逗号前后的空格可以提高代码的可读性，团队约定在逗号后面使用空格，逗号前面不加空格。
+
+    var foo = 1, bar = 2
+####逗号风格
+>逗号分隔列表时，在 JavaScript 中主要有两种逗号风格：
+
++ 标准风格，逗号放置在当前行的末尾
++ 逗号前置风格，逗号放置在下一行的开始位置
+
+>>团队约定使用标准风格
+
+    var foo = 1,
+    bar = 2
+
+	var foo = ['name',
+            	'age']
+
+####函数调用
+>为了避免语法错误，团队约定在函数调用时，禁止使用空格
+
+    fn()
+
+####缩进
+>缩进统一使用四个空格
+
+####构造函数首字母大写
+>构造函数的首字母要大小，以此来区分构造函数和普通函数。
+
+    var fooItem = new Foo()
+
+
+
+
+
+
+
+    
+   
+    
+
+
 
 
 
